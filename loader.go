@@ -4,20 +4,25 @@ import (
 	`bytes`
 	`embed`
 	`io`
+	`path`
 
 	`github.com/flosch/pongo2`
 )
 
-func NewLoader(fs embed.FS) pongo2.TemplateLoader {
-	return &Loader{fs: fs}
+func NewLoader(prefix string, fs *embed.FS) pongo2.TemplateLoader {
+	return &Loader{
+		prefix: prefix,
+		fs:     fs,
+	}
 }
 
 type Loader struct {
-	fs embed.FS
+	prefix string
+	fs     *embed.FS
 }
 
 func (l *Loader) Abs(_, name string) string {
-	return name
+	return path.Join(l.prefix, name)
 }
 
 func (l *Loader) Get(path string) (io.Reader, error) {

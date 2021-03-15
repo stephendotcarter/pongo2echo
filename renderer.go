@@ -8,14 +8,15 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func NewRenderer(fs embed.FS) echo.Renderer {
+func NewRenderer(prefix string, fs *embed.FS) echo.Renderer {
 	return Renderer{
-		TemplateSet: pongo2.NewSet("assets", NewLoader(fs)),
+		TemplateSet: pongo2.NewSet(prefix, NewLoader(prefix, fs)),
 	}
 }
 
 // Renderer : Custom Renderer for templates
 type Renderer struct {
+	trim        string
 	TemplateSet *pongo2.TemplateSet
 }
 

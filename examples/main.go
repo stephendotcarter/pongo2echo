@@ -15,10 +15,10 @@ var fs embed.FS
 
 func main() {
 	e := echo.New()
-	e.Renderer = pongo2echo.NewRenderer(fs)
+	e.Renderer = pongo2echo.NewRenderer("templates/", &fs)
 	e.Debug = true
 	e.GET("/", func(ctx echo.Context) error {
-		return ctx.Render(http.StatusOK, "templates/main.html", pongo2.Context{
+		return ctx.Render(http.StatusOK, "main.html", pongo2.Context{
 			"name": "World",
 		})
 	})
