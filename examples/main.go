@@ -4,7 +4,7 @@ import (
 	"embed"
 	"net/http"
 
-	"github.com/flosch/pongo2/v6"
+	"github.com/flosch/pongo2/v4"
 	"github.com/labstack/echo/v4"
 
 	"github.com/stephendotcarter/pongo2echo"
