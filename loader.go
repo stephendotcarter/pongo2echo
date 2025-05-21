@@ -6,7 +6,7 @@ import (
 	"io"
 	"path"
 
-	"github.com/flosch/pongo2/v6"
+	"github.com/flosch/pongo2/v4"
 )
 
 func NewLoader(prefix string, fs *embed.FS) pongo2.TemplateLoader {
