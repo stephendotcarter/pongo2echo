@@ -1,13 +1,13 @@
 package main
 
 import (
-	`embed`
-	`net/http`
+	"embed"
+	"net/http"
 
-	`github.com/flosch/pongo2`
+	"github.com/flosch/pongo2/v6"
 	"github.com/labstack/echo/v4"
 
-	"github.com/mdaliyan/pongo2echo"
+	"github.com/stephendotcarter/pongo2echo"
 )
 
 //go:embed templates/*

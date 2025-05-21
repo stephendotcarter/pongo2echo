@@ -1,12 +1,12 @@
 package pongo2echo
 
 import (
-	`bytes`
-	`embed`
-	`io`
-	`path`
+	"bytes"
+	"embed"
+	"io"
+	"path"
 
-	`github.com/flosch/pongo2`
+	"github.com/flosch/pongo2/v6"
 )
 
 func NewLoader(prefix string, fs *embed.FS) pongo2.TemplateLoader {

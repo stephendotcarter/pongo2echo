@@ -1,10 +1,10 @@
 package pongo2echo
 
 import (
-	`embed`
+	"embed"
 	"io"
 
-	"github.com/flosch/pongo2"
+	"github.com/flosch/pongo2/v6"
 	"github.com/labstack/echo/v4"
 )
 
